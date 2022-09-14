@@ -24,10 +24,10 @@ const App: FC = () => {
   
   const onSendInformation = (): void => {
     if(dataForSend.length && selected.length){
-      let id = Selectors.filter(el => {return el.name === selected})[0].id;
-      let idInArr = serverData.findIndex((el: any) => el.app_id === id);
-      if(serverData[idInArr].account_ids.length < 15){
-        axios.post('http://178.62.195.246:3000/updatedb', {id, dataForSend});
+      let appID = Selectors.filter(el => {return el.name === selected})[0].id;
+      let idInArr = serverData.findIndex((el: any) => el.app_id === appID);
+      if(serverData[idInArr].account_ids.length < 99){
+        axios.post('http://178.62.195.246:3000/updatedb', {appID, dataForSend});
       }
       else{
         alert('Достигнуто максимальное кол-во id')
@@ -40,8 +40,8 @@ const App: FC = () => {
 
   const onDeleteInformation = (): void => {
     if(dataForDelete.length && selectedDelete.length){
-      let id = Selectors.filter(el => {return el.name === selectedDelete})[0].id;
-      axios.post('http://178.62.195.246:3000/deletedb', {id, dataForDelete});
+      let appID = Selectors.filter(el => {return el.name === selectedDelete})[0].id;
+      axios.post('http://178.62.195.246:3000/deletedb', {appID, dataForDelete});
     }
     else{
       alert('Проверьте заполненность полей!');

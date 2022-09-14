@@ -14,7 +14,7 @@ const Container: FC<props> = (props: props) => {
             <h4>{name}</h4>
             <ul>
                 {props.account_ids.map((el: string) => {
-                    return el + ", "
+                    return  el + ", "
                 })}
             </ul>
         </div>
