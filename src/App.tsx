@@ -41,7 +41,7 @@ const App: FC = () => {
   const onDeleteInformation = (): void => {
     if(dataForDelete.length && selectedDelete.length){
       let appID = Selectors.filter(el => {return el.name === selectedDelete})[0].id;
-      axios.post('http://178.62.195.246:3000/deletedb', {appID, dataForDelete});
+      axios.post('http://165.22.192.19:3000/testroute', {appID, dataForDelete});
     }
     else{
       alert('Проверьте заполненность полей!');
@@ -84,7 +84,7 @@ const App: FC = () => {
         <textarea onChange={(event: BaseSyntheticEvent) => onChangeText(event)}></textarea>
         <button onClick={onSendInformation}>Добавить</button>
 
-
+{/* 
         <h2>Удаление аккаунтов</h2>
         <h5>Выберите приложение из списка</h5>
         <FormControl>
@@ -94,7 +94,7 @@ const App: FC = () => {
         </FormControl>
         <h5>Введите ID аккаунта без кавычек<br/>Пример: "2991397620933658, 2296705047024331"</h5>
         <textarea onChange={(event: BaseSyntheticEvent) => onChangeDeleteAppID(event)}></textarea>
-        <button onClick={onDeleteInformation}>Удалить</button>
+        <button onClick={onDeleteInformation}>Удалить</button> */}
 
 
       </div>
