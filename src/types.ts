@@ -5,13 +5,29 @@ export interface ISelector{
 
 
 export const Selectors:ISelector[] = [
+    // {
+    //     name: "Dickey Monkey",
+    //     id: '595282015447095'
+    // },
     {
-        name: "Dickey Monkey",
-        id: '595282015447095'
+        name: "Queen Of Pearls",
+        id: "357870159642422"
     },
     {
-        name: "test",
-        id: "834958394589545"
+        name: "Hunter Of The Treasure",
+        id: "2019449168262303"
+    },
+    {
+        name: "Prince Of sand",
+        id: "742877997039962"
+    },
+    {
+        name: "Temple Fortune",
+        id: "627350779006969"
+    },
+    {
+        name: "Baseball winner",
+        id: "680230049751992"
     }
 ]
 

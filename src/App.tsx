@@ -16,7 +16,7 @@ const App: FC = () => {
   const [serverData, setServerData] = useState<Array<IServerData>>([]);
 
   useEffect(() => {
-    axios.get('http://178.62.195.246:3000/testingdb').then(data => {setServerData(data.data)});
+    axios.get('http://165.22.192.19:3000/testingdb').then((data: any) => {setServerData(data.data)});
   },[])
   
   console.log(serverData);
@@ -27,7 +27,7 @@ const App: FC = () => {
       let appID = Selectors.filter(el => {return el.name === selected})[0].id;
       let idInArr = serverData.findIndex((el: any) => el.app_id === appID);
       if(serverData[idInArr].account_ids.length < 99){
-        axios.post('http://178.62.195.246:3000/updatedb', {appID, dataForSend});
+        axios.post('http://165.22.192.19:3000/updatedb', {appID, dataForSend});
       }
       else{
         alert('Достигнуто максимальное кол-во id')
